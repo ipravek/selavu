@@ -341,6 +341,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  dotenv (~> 3.1)
   importmap-rails
   jbuilder
   kamal

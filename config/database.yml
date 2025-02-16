@@ -18,7 +18,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  url: <%= ENV["DATABASE_CONNECTION_URL"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %> 
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
@@ -82,8 +84,6 @@ production:
   primary: &primary_production
     <<: *default
     database: selavu_production
-    username: selavu
-    password: <%= ENV["SELAVU_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: selavu_production_cache
